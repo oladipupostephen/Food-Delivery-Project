@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ArrowUpRightIcon,
   BikeIcon,
@@ -21,7 +23,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   // const { user, logout } = useAuth();
   // const { cartCount, setIsCartOpen } = useCart();
-  const user: unknown = {
+  const user: any = {
     name: "John Doe",
     email: "john.doe@example.com",
     isAdmin: true,

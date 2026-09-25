@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 //import { useAuth } from "../context/AuthContext";
-import toast from "react-hot-toast";
+//import toast from "react-hot-toast";
 
 const Login = () => {
   const [isLoginState, setIsLoginState] = useState(true);
@@ -27,17 +27,17 @@ const Login = () => {
   const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      if (isLoginState) {
-        // await login(email, password);
-      } else {
-        // await register(name, email, password);
-      }
-    } catch (error: any) {
-      // toast.error(error.response?.data?.message || error?.message);
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   if (isLoginState) {
+    //     // await login(email, password);
+    //   } else {
+    //     // await register(name, email, password);
+    //   }
+    // } catch (error: any) {
+    //   // toast.error(error.response?.data?.message || error?.message);
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -90,7 +90,7 @@ const Login = () => {
           </div>
 
           {/* Login / Register Form */}
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {!isLoginState && (
               <label className="text-sm flex flex-col gap-1">
                 Name
