@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import type { Product } from "../../types";
+//import { useEffect, useState } from "react";
+//import type { Product } from "../../types";
 import { dummyProducts } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "lucide-react";
 import ProductCard from "../../components/ProductCard";
 const PopularProducts = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    setProducts(dummyProducts.slice(0, 10));
-  });
+  //const [products, setProducts] = useState<Product[]>([]);
+  const products = dummyProducts.slice(0, 10);
+  // useEffect(() => {
+  //   setProducts(dummyProducts.slice(0, 10));
+  // });
   return (
     <section className="pb-16">
       <div className="max-w-7xl mx-auto ">

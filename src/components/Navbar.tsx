@@ -17,21 +17,21 @@ import {
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-//import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 //import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   // const { user, logout } = useAuth();
-  // const { cartCount, setIsCartOpen } = useCart();
+  const { cartCount, setIsCartOpen } = useCart();
   const user: any = {
     name: "John Doe",
     email: "john.doe@example.com",
     isAdmin: true,
   };
-  const { cartCount, setIsCartOpen } = {
-    cartCount: 3,
-    setIsCartOpen: (_data: unknown) => {},
-  };
+  // const { cartCount, setIsCartOpen } = {
+  //   cartCount: 3,
+  //   setIsCartOpen: (_data: unknown) => {},
+  // };
   const [searchQuery, setSearchQuery] = useState("");
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const navigate = useNavigate();

@@ -11,6 +11,7 @@ import Checkout from "./Pages/Checkout";
 import MyOrders from "./Pages/MyOrders";
 import OrderTracking from "./Pages/OrderTracking";
 import Addresses from "./Pages/Addresses";
+import Products from "./Pages/Products";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         {/* Main pages - With Navbar/Footer */}
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductsPage />} />
           <Route path="search" element={<SearchResults />} />
           <Route path="deals" element={<FlashDeals />} />

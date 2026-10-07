@@ -1,7 +1,7 @@
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { Product } from "../types";
 import { Plus, Star } from "lucide-react";
-//import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 
 interface Props {
   product: Product;
@@ -10,14 +10,13 @@ interface Props {
 const ProductCard = ({ product }: Props) => {
   const currency = import.meta.env.VITE_CURRENCY_SYMBOL || "$";
 
-  //const { addToCart } = useCart();
-  // const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div
       className="bg-white rounded-2xl overflow-hidden shadow hover:shadow-md transition-all duration-300 group animate-fade-in cursor-pointer"
-      // onClick={() => navigate(`/products/${product.id}`)}
-    >
+      onClick={() => navigate(`/products/${product._id}`)}>
       {/* Image */}
       <div className="relative aspect-square overflow-hidden">
         <img
@@ -76,7 +75,7 @@ const ProductCard = ({ product }: Props) => {
           <button
             onClick={(e) => {
               e.stopPropagation();
-              // addToCart(product);
+              addToCart(product);
             }}
             className="size-7 rounded-full bg-app-orange text-white flex-center shrink-0 hover:bg-app-orange-dark transition-colors active:scale-95">
             <Plus className="size-3.5" />
